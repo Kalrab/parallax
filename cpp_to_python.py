@@ -11,23 +11,23 @@ double round(double x) { return (x-floor(x))>0.5 ? ceil(x) : floor(x); }
 void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
     /* Input/output variables. */
-    double ch;      /* Canvas height. */
-    double cw;      /* Canvas width. */
-    double *img2;   /* Image to be stitched (source image). */
+    ch = 0.0      /* Canvas height. */
+    cw = 0.0      /* Canvas width. */
+    img2 = cv2.imread("./1.jpg")   /* Image to be stitched (source image). */
     double *H;      /* Image to be stitched (source image). */
     double *off;    /* 2x1 matrix which contains the offset of the source and target images. */
 
-    double *X;      /* X positions of the moving dlt (or moving ls) grid. */
-    double *Y;      /* Y positions of the moving dlt (or moving ls) grid. */
+    X = 0.0      /* X positions of the moving dlt (or moving ls) grid. */
+    Y = 0.0      /* Y positions of the moving dlt (or moving ls) grid. */
 
-    double *warped_img2;     /* Warped img2 (img2 after being warped with either Global Homography (projective, DLT)
+    warped_img2 = cv2.imread("./1.jpg")     /* Warped img2 (img2 after being warped with either Global Homography (projective, DLT)
                               * or Moving DLT. */
     /* Intermediate variables.*/
     int canvm,canvn;    /* 'm' and 'n': size of the canvas image. */
     int img2m,img2n;    /* 'm' and 'n': size of the target image. */
-    int Hm;
-    int xn;
-    int yn;
+    Hm = 0
+    xn = 0
+    yn = 0
 
     int posa, posb; /*contain the position of the source image after applying the homography H (with DLT or MDLT)*/
     int cidx, sidx; /*contain the indexes of the target and source images respectively (after homography transform)*/
@@ -44,7 +44,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 
     /* Auxiliary variables and counters*/
     int xinx,yinx,inx;
-    int i, j;
+    i, j = 0,0
 
     /* Check for proper number of arguments. */
     if (nrhs < 5)
